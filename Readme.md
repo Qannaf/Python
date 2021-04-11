@@ -343,7 +343,7 @@ print("{} {}".format(h1.nom,h1.age))
 ````
 
 ## 12. Héritage		heritage.py
-
+````
 #pass si il y a pas un constructeur
 
 #class mere
@@ -406,4 +406,387 @@ class Doctorant(Etudiant,Enseignant):
     pass
 ````
 
+## 13. Chaine de caracere	chaine_de_caracere.py
+````
+#Classe str:string(chaine de cractere)
 
+#help(str)
+ma_chaine ="Bonjour tout le monde!"
+ma_chaine1 = ma_chaine.lower()
+ma_chaine2 = ma_chaine.capitalize()
+ma_chaine3 = ma_chaine.title()
+ma_chaine4 = ma_chaine.upper()
+
+print("{}\n{}\n{}\n{}\n{}".format(ma_chaine,ma_chaine1,ma_chaine2,ma_chaine3,ma_chaine4))
+
+
+
+#rempleçage par copie
+ch1 = "Bonjour"
+ch2 = ch1
+print(ch1,ch2)
+ch2 = ch1.upper()
+print(ch1,ch2)
+
+
+ch = "MonSuperProgramme"
+print(ch)
+ch = ch.center(50,'-')
+print(ch)
+
+print(ch.find("Super"))
+print(ch.index("Super"))
+print(ch.strip())
+
+ch1 = ch.replace("M","T",1)
+print(ch1)
+
+print(ch2.split("`|"))
+
+
+ch = "bonjour"
+if ch.islower():
+    print("Maj")
+else:
+    print("min")
+````
+
+## 14. Les listes	listes.py
+````
+#Création une liste
+liste = list()
+print(liste)
+
+liste = [1,2,3,4,"Vélo"]
+print(liste)
+
+liste = [1]*10
+print(liste)
+print(liste[:])
+
+liste = range(20)
+print(liste)
+
+#boucle
+i=0
+while i<len(liste):
+    print(liste[i])
+    i+=1
+    
+for element in liste:
+    print(element)
+
+for element in enumerate(liste) :    
+    print(element)
+
+print("+--------------------------------------------------+")
+liste =["Arc","épée","bouclier","potion","fleche","tunique"]
+for element in liste:
+    print(element)
+print("+--------------------------------------------------+")
+#accéder un élément    liste[x] = affiche l'élément d'indice 1
+                      # liste[-x] = affiche x éme l'élément en partant de la fin
+                    # list [A:B] = affiche de A à B
+print(liste[3])
+print(liste[-3])
+print(liste[:])
+print(liste[:3])
+print(liste[3:])
+print(liste[1])
+print(liste[-1])
+print(liste[-4])
+print(liste[2:5])
+liste [2] = "Qannaf"
+print(liste)
+
+"""
+liste[:] = ["bouclier d'acier"]*len(liste)
+print(liste[:])
+
+liste[2:4] = ["bouclier d'acier"]*2
+print(liste[:])
+"""
+
+if "Arc" in liste:
+    print("Arce trové")
+else:
+    print("rien")
+
+liste.append("Alsahmi")
+print(liste[:])
+liste.append("Ahmed")
+print(liste[:])
+
+liste.insert(0,"Saleh")
+print(liste[:])
+
+
+liste.remove("Saleh")
+print(liste[:])
+del liste[0]
+print(liste[:])
+
+print("l'indice de alsahmi",liste.index("Alsahmi"))
+
+objrt_sprm = liste.index("Alsahmi")
+del liste[objrt_sprm]
+print(liste[:])
+
+liste.remove("Ahmed")
+print(liste[:])
+
+liste = [3,-4,55,3,76,-5,56,4,-8,345]
+print(liste[:])
+liste.sort()
+print(liste[:])
+liste.reverse()
+print(liste[:])
+
+print("nbr three apparaitre  ",liste.count(3)," fois")
+
+liste.clear()
+print(liste[:])
+````
+
+## 15. Les tuples	tuples.py
+````
+#Tuple un fois créer on ne peux pas le modifier
+mon_tuple = (45,)  #pour avoir un tuple on mais , la virgule
+print(type(mon_tuple))
+
+n_tuple = 45,
+print(type(mon_tuple))
+n_tuple = ()
+print(type(mon_tuple))
+n_tuple = (4,5)
+print(type(mon_tuple))
+try:
+    print((mon_tuple[0]))   
+except :
+    print("dépasement de tuple...")
+
+nb1 = 14
+nb2 = 24
+print(nb1,nb2)
+nb1,nb2= 14,24
+print(nb1,nb2)
+(nb1,nb2)= (14,24)
+print(nb1,nb2)
+
+nb1 = 0   #façon de modifier un élément tuple
+print(nb1,nb2)
+
+def get_joueur():
+    q = 123
+    a = 23
+    return (q,a)
+#prgm principle
+x = 0
+y = 0
+print("le joueur {},{}".format(x,y))
+x,y = get_joueur()
+print("le joueur {},{}".format(x,y))
+x,y =0,10
+print("le joueur {},{}".format(x,y))
+````
+
+## 16. Les dicationnaire	dicationnaire.py
+````
+#Création de dictionnaire
+dic = {"prénom":"Qannaf"}              #la dictionnaire c'est les crouché
+print(dic["prénom"])
+dic = {1:123,"chat":"c'est un animale domastique"}             
+print(dic["chat"])
+dic["chat"] = "c'est un animale le meilleur preferer de l'homme"
+print(dic["chat"])
+dic["chien"] = "c'est un animale trés fidele"
+print(dic["chien"])
+
+
+
+dic = {"Salut":"Hi","Bonjour":"Good morning"}
+print(dic)
+
+print (dic.pop("Salut"))
+print(dic)
+
+del dic["Bonjour"]
+print(dic)
+
+dic = {"Salut":"Hi","Bonjour":"Good morning","Aller":"Go","D'accord":"Okey"}
+if "chien" in dic :
+    print("oui")
+else:
+    print("non")
+if "Salut" in dic :
+    print("oui")
+else:
+    print("non")
+
+for i in dic:
+    print(i)
+
+for i in dic.keys():
+    print(i)
+
+
+for i in dic.values():
+    print(i)
+
+
+for k,v in dic.items():
+    print("le mot : {}--->  sa traduction  : {}".format(k,v))
+
+dic ["Qannaf"] = "votre prénom"
+print(dic)
+
+
+dic2 = dic   # la copie c'est par réferance
+dic2 ["ALSAHMI"] = "Votre nom"
+print(dic)
+
+
+def mafonction(nom,age):
+    pass
+
+mafonction(age = 27,nom = "Qannaf")
+
+
+def mafonction(**p):
+    print(p)
+mafonction(x  = 123,y = "Qannaf")
+
+def mafonction(*p):
+    print(p)
+mafonction(123,"Qannaf")
+
+def mafonction(**p):
+    print(p)
+mafonction(y = "Qannaf")
+````
+## 17. Read and Write from file		w_r_fichiers.py
+````
+import pickle
+
+''' =================  l'écriture   =============== '''
+with open("doc/fichier.txt","w") as fic:
+	fic.write("Hi!\t evry one\n")
+	fic.write(" My name is Qannaf, I have ")
+	fic.write(str(27))
+	fic.write(" years old\n And Yous? ...")
+	
+
+
+''' =================  lecteur le fichier   =============== '''
+with open("doc/fichier.txt","r") as fic:
+	print(fic.read())
+	# pas besois de fermer le fichier avec with
+	
+	
+if fic.closed:
+	print("\n\t!!! rasurez-vous votre fichier est bien fermé !!!")
+
+''' ========== ===== '''
+
+
+class Player:
+	def __init__(self, _name="No name", _level = 0):
+		self.name = _name
+		self.level = _level 
+		
+	def Mymethode(self):
+		print( "{} ({})".format(self.name,self.level) )
+		
+p1 = Player("Qannaf", 10)
+p1.Mymethode()
+
+
+with open("doc/player.data","wb") as fic:
+	pickle.Pickler(fic).dump(p1) 
+		
+with open("doc/player.data","rb") as fic:
+	p1_Copie = pickle.Unpickler(fic).load()
+	
+p1_Copie.Mymethode()
+````
+
+## 18. Fichiers		fichiers.py
+````
+import pickle
+#voila mon 19émé code en python  pass si il y a pas un constructeur
+#							
+
+
+fic = open("doc/fichier.txt","r")
+print(fic.read())
+fic.close()
+
+#===========
+fic = open("doc/fichier.txt","r")
+
+line = fic.readline()               #ligne par ligne
+print(line)
+
+line = fic.readline()
+print(line)
+
+fic.close()
+
+#===========
+fic = open("doc/fichier.txt","r")
+
+line = fic.readlines()               #ligne ptous les lignes
+print(line)
+
+
+fic.close()
+#=====================
+
+'''  fait gaffe la fonction read() return string '''
+fic = open("doc/fichier.txt","r")
+print(fic.read())
+print(type(fic.read()))
+fic.close()
+
+
+
+#=====================
+
+with open("doc/fichier.txt","r") as fic:
+	print(fic.read())
+	# pas besois de fermer le fichier avec with
+	
+if fic.closed:
+	print("Fermé")
+
+
+''' =================  l'écriture   =============== '''
+with open("doc/fichier.txt","w") as fic:
+	fic.write("Hi!\n")
+	fic.write(" My name is Qannaf, I have ")
+	fic.write(str(27))
+	fic.write(" years old\n And Yous? ...")
+	
+#===========
+
+class Player:
+	def __init__(self, _name, _level):
+		self.name = _name
+		self.level = _level 
+		
+	def Mymethode(self):
+		print("{} ({})".format(self.name,self.level))
+		
+p1 = Player("Qannaf", 10)
+
+''''
+with open("doc/player.data","wb") as fic:
+	record = pickle.Pickler(fic)
+	record.dump(p1)
+	'''
+with open("doc/player.data","rb") as fic:
+	get_record = pickle.Unpickler(fic)
+	player_one = get_record.load()
+	
+player_one.Mymethode()
+````
