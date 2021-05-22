@@ -14,7 +14,7 @@ pygame.display.set_caption("Mon application")   #changer son nom
 #mon_app.fill(couleur_blanc)   #mettre couleur pour le fond
 
 #charger l'image
-mon_image = pygame.image.load("C:/Users/AL-SAHMI/Desktop/bureau/Test technique/python/image.jpg") #returne une surface
+mon_image = pygame.image.load("Qannaf.png") #returne une surface
 mon_image.convert_alpha()
 #mon_image.convert()
 
